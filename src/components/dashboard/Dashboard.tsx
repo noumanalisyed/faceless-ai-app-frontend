@@ -15,6 +15,7 @@ import { SvgIcon8 } from './SvgIcon8';
 import { SvgIcon9 } from './SvgIcon9';
 import { SvgIcon10 } from './SvgIcon10';
 import classes from './Dashboard.module.css';
+import { Link } from 'react-router-dom';
 
 interface Props {
   className?: string;
@@ -134,6 +135,7 @@ export const Dashboard: FC<Props> = memo(function Dashboard(props = {}) {
                         </div>
                       </div>
                     </div>
+                      <Link to='/FakeText' className={classes.textBlock4}>
                     <div className={classes.container19}>
                       <div className={classes.container20}>
                         <div className={classes.fakeText}>Fake Text </div>
@@ -145,6 +147,7 @@ export const Dashboard: FC<Props> = memo(function Dashboard(props = {}) {
                         <div className={classes.fakeTextMessageStory}>Fake text message story</div>
                       </div>
                     </div>
+                      </Link>
                   </div>
                   <div className={classes.backgroundBorderShadow2}>
                     <div className={classes.container22}>
