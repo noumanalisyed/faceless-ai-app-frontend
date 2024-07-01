@@ -1,17 +1,21 @@
-import { memo } from 'react';
-import type { FC } from 'react';
-
-import classes from './App.module.css';
-import resets from './components/_resets.module.css';
-import { VsubIoByHtmlToDesignFREEVersio } from './components/VsubIoByHtmlToDesignFREEVersio/VsubIoByHtmlToDesignFREEVersio';
-
+import { Routes, Route } from 'react-router-dom';
+import {Homepage} from './components/homepage/homepage'; // Adjust the import path as necessary
+import {Login} from './components/login/login'; // Adjust the import path as necessary
+// Import other components you want to route to
+import resets from './resets.module.css'; // Import the resets.css file
 interface Props {
   className?: string;
 }
-export const App: FC<Props> = memo(function App(props = {}) {
+function App() {
   return (
-    <div className={`${resets.clapyResets} ${classes.root}`}>
-      <VsubIoByHtmlToDesignFREEVersio />
+    <div className={`${resets.clapyResets}`}>
+    <Routes>
+      <Route path="/" element={<Homepage/>} />
+      <Route path="/login" element={<Login/>} />
+      {/* Define other routes here */}
+    </Routes>
     </div>
   );
-});
+}
+
+export default App;

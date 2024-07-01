@@ -4,13 +4,15 @@ import type { FC } from 'react';
 import resets from '../_resets.module.css';
 import { SvgIcon } from './SvgIcon';
 import { SvgIcon2 } from './SvgIcon2';
-import classes from './VsubIoByHtmlToDesignFREEVersio.module.css';
+import classes from './homepage.module.css';
+import { Link } from 'react-router-dom';
 
 interface Props {
   className?: string;
 }
 /* @figmaId 1:2 */
-export const VsubIoByHtmlToDesignFREEVersio: FC<Props> = memo(function VsubIoByHtmlToDesignFREEVersio(props = {}) {
+export const Homepage: FC<Props> = memo(function Homepage(props = {}) {
+  
   return (
     <div className={`${resets.clapyResets} ${classes.root}`}>
       <div className={classes.background}>
@@ -72,9 +74,9 @@ export const VsubIoByHtmlToDesignFREEVersio: FC<Props> = memo(function VsubIoByH
               <div className={classes.container10}>
                 <div className={classes.link3}>
                   <div className={classes.login}>
-                    <a href='https://vsub.io/login' target='_blank' rel='noreferrer' className={classes.textBlock5}>
-                      Login
-                    </a>
+                    <Link to='/login' className={classes.textBlock5}>
+                     Login
+                    </Link>
                   </div>
                 </div>
               </div>
