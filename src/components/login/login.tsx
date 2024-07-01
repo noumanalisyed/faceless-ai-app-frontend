@@ -4,6 +4,7 @@ import type { FC } from 'react';
 import resets from '../_resets.module.css';
 import classes from './Login.module.css';
 import { SvgIcon } from './SvgIcon';
+import { Link, Navigate } from 'react-router-dom';
 
 interface Props {
   className?: string;
@@ -37,14 +38,9 @@ export const Login: FC<Props> = memo(function Login(props = {}) {
                         </div>
                       </div>
                       <div className={classes.signInWithGoogle}>
-                        <a
-                          href='https://api.vsub.io/auth/google'
-                          target='_blank'
-                          rel='noreferrer'
-                          className={classes.textBlock}
-                        >
+                        <Link to='/Dashboard' className={classes.textBlock5}>
                           Sign in with Google
-                        </a>
+                        </Link>
                       </div>
                     </button>
                   </div>

@@ -34,3 +34,24 @@
 .clapyResets svg {
   overflow: visible;
 }
+
+/* Media Query for screens smaller than 600px */
+@media (max-width: 600px) {
+  .clapyResets {
+    /* Add responsive styles here */
+  }
+}
+
+/* Media Query for screens between 601px and 1024px */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .clapyResets {
+    /* Add responsive styles here */
+  }
+}
+
+/* Media Query for screens larger than 1024px */
+@media (min-width: 1025px) {
+  .clapyResets {
+    /* Add responsive styles here */
+  }
+}
