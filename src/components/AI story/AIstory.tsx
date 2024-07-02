@@ -1,6 +1,7 @@
-import { memo } from 'react';
+import {memo} from 'react';
 import type { FC } from 'react';
-
+import React, { useState, ChangeEvent } from 'react';
+import axios from 'axios';
 import resets from '../_resets.module.css';
 import { ImgDownSvgIcon } from './ImgDownSvgIcon';
 import { SvgIcon } from './SvgIcon';
@@ -11,9 +12,41 @@ import classes from './AIstory.module.css';
 interface Props {
   className?: string;
 }
+
 /* @figmaId 25:2 */
 export const AIstory: FC<Props> = memo(function AIstory(props = {}) {
-  return (
+  const [prompt, setPrompt] = useState("");
+    const [videoPath, setVideoPath] = useState("");
+
+    const handlePromptChange = (event: ChangeEvent<HTMLInputElement>) => {
+      setPrompt(event.target.value);
+  };
+
+  const handleGenerateVideo = () => {
+      axios.post('http://localhost:8080/api/generate_video', { prompt })
+          .then(response => {
+              console.log(response.data);
+              setVideoPath(response.data);
+          }).catch(error => {
+          console.error('There was an error generating the video!', error);
+      });
+  };
+
+  const handleFileUpload = () => {
+      const formData = new FormData();
+      formData.append('file', videoPath);
+
+      axios.post('http://localhost:8080/api/upload_video', formData, {
+          headers: {
+              'Content-Type': 'multipart/form-data'
+          }
+      }).then(response => {
+          console.log(response.data);
+      }).catch(error => {
+          console.error('There was an error uploading the file!', error);
+      });
+  };
+    return (
     <div className={`${resets.clapyResets} ${classes.root}`}>
       <div className={classes.background}>
         <div className={classes.background2}>
@@ -195,7 +228,7 @@ export const AIstory: FC<Props> = memo(function AIstory(props = {}) {
                                   </div>
                                 </div>
                                 <button className={classes.button}>
-                                  <div className={classes.generateScript}>Generate script</div>
+                                <button className={classes.generateScript} onClick={handleGenerateVideo}>Generate Video</button>
                                 </button>
                               </div>
                             </div>
@@ -203,7 +236,7 @@ export const AIstory: FC<Props> = memo(function AIstory(props = {}) {
                           <div className={classes.container44}>
                             <div className={classes.container45}>
                               <div className={classes.container46}>
-                                <div className={classes.textarea}></div>
+                              <input className={classes.textarea} value={prompt} onChange={handlePromptChange} placeholder="Enter video prompt"></input>
                               </div>
                             </div>
                           </div>
@@ -251,7 +284,7 @@ export const AIstory: FC<Props> = memo(function AIstory(props = {}) {
                           <div className={classes.container57}>
                             <div className={classes.container58}>
                               <div className={classes.container59}>
-                                <div className={classes.input}></div>
+                                <input className={classes.input} />
                               </div>
                             </div>
                           </div>
@@ -264,6 +297,12 @@ export const AIstory: FC<Props> = memo(function AIstory(props = {}) {
                       <div className={classes.continue}>Continue</div>
                     </button>
                   </div>
+                  {videoPath && (
+                <div>
+                    <p>Generated Video Path: {videoPath}</p>
+                    <button onClick={handleFileUpload}>Upload Video</button>
+                </div>
+            )}
                 </div>
               </div>
             </div>
