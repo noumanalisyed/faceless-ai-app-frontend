@@ -1,17 +1,24 @@
-import { memo } from 'react';
-import type { FC } from 'react';
-
-import classes from './App.module.css';
-import resets from './components/_resets.module.css';
-import { VsubIoByHtmlToDesignFREEVersio } from './components/VsubIoByHtmlToDesignFREEVersio/VsubIoByHtmlToDesignFREEVersio';
-
+import { Routes, Route } from 'react-router-dom';
+import {Homepage} from './components/homepage/homepage'; // Adjust the import path as necessary
+import {Login} from './components/login/login'; // Adjust the import path as necessary
+import resets from './resets.module.css'; // Import the resets.css file
+import { Dashboard } from './components/dashboard/Dashboard';
+import { FakeText } from './components/fake text promt/FakeText';
 interface Props {
   className?: string;
 }
-export const App: FC<Props> = memo(function App(props = {}) {
+function App() {
   return (
-    <div className={`${resets.clapyResets} ${classes.root}`}>
-      <VsubIoByHtmlToDesignFREEVersio />
+    <div className={`${resets.clapyResets}`}>
+    <Routes>
+      <Route path="/" element={<Homepage/>} />
+      <Route path="/login" element={<Login/>} />
+      <Route path="/dashboard" element={<Dashboard/>} />
+      <Route path="/FakeText" element={<FakeText/>} />
+      {/* Define other routes here */}
+    </Routes>
     </div>
   );
-});
+}
+
+export default App;
