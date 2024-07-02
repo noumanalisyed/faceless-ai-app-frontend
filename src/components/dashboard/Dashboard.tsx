@@ -127,6 +127,7 @@ export const Dashboard: FC<Props> = memo(function Dashboard(props = {}) {
                   </div>
                 </div>
                 <div className={classes.container17}>
+                      <Link to='/FakeText' className={classes.textBlock4}>
                   <div className={classes.backgroundBorderShadow}>
                     <div className={classes.container18}>
                       <div className={classes.imgMessage}>
@@ -135,7 +136,6 @@ export const Dashboard: FC<Props> = memo(function Dashboard(props = {}) {
                         </div>
                       </div>
                     </div>
-                      <Link to='/FakeText' className={classes.textBlock4}>
                     <div className={classes.container19}>
                       <div className={classes.container20}>
                         <div className={classes.fakeText}>Fake Text </div>
@@ -147,8 +147,9 @@ export const Dashboard: FC<Props> = memo(function Dashboard(props = {}) {
                         <div className={classes.fakeTextMessageStory}>Fake text message story</div>
                       </div>
                     </div>
-                      </Link>
                   </div>
+                      </Link>
+                      <Link to='/AIstory' className={classes.textBlock4}>
                   <div className={classes.backgroundBorderShadow2}>
                     <div className={classes.container22}>
                       <div className={classes.imgDeploymentUnit}>
@@ -166,6 +167,7 @@ export const Dashboard: FC<Props> = memo(function Dashboard(props = {}) {
                       </div>
                     </div>
                   </div>
+                  </Link>
                   <div className={classes.backgroundBorderShadow3}>
                     <div className={classes.container26}>
                       <div className={classes.imgQuestionCircle}>
