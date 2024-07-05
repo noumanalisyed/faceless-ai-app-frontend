@@ -4,6 +4,7 @@ import {Login} from './components/login/login'; // Adjust the import path as nec
 import resets from './resets.module.css'; // Import the resets.css file
 import { Dashboard } from './components/dashboard/Dashboard';
 import { FakeText } from './components/fake text promt/FakeText';
+import { AIstory } from './components/AI story/AIstory';
 interface Props {
   className?: string;
 }
@@ -15,6 +16,7 @@ function App() {
       <Route path="/login" element={<Login/>} />
       <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/FakeText" element={<FakeText/>} />
+      <Route path="/AIstory" element={<AIstory/>} />
       {/* Define other routes here */}
     </Routes>
     </div>
