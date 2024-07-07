@@ -297,12 +297,9 @@ export const AIstory: FC<Props> = memo(function AIstory(props = {}) {
                       <div className={classes.continue}>Continue</div>
                     </button>
                   </div>
-                  {videoPath && (
-                <div>
-                    <p>Generated Video Path: {videoPath}</p>
-                    <button onClick={handleFileUpload}>Upload Video</button>
-                </div>
-            )}
+                  <div className={classes.backgroundBorder4}>
+                  <video src='http://localhost:5500/generated_video.mp4' controls></video>
+                  </div>
                 </div>
               </div>
             </div>
