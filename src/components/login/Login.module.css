@@ -72,7 +72,7 @@
 }
 .loginToGetUnlimitedAccessAndSa {
   color: #b5bac1;
-  font-size: 16px;
+  font-size: 100px;
   line-height: 24px;
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
     'Liberation Sans', sans-serif;
@@ -83,17 +83,22 @@
   flex-direction: column;
 }
 .container7 {
-  width: 320px;
-  height: min-content;
-  flex-direction: column;
-  gap: 16px;
-  padding: 24px 0 0;
-}
-.container8 {
-  height: min-content;
-  align-self: stretch;
+    display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #1c1e21; /* Assuming a dark background color */
+  border-radius: 8px;
+  width: 300px; /* Adjust based on your design */
+  margin: auto;
+}
+.container8 {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .link {
   width: min-content;
@@ -106,7 +111,22 @@
   flex-direction: column;
   align-items: flex-start;
   border-radius: 8px;
-  background-color: #463fc6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4285f4;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  width: 200px; /* Adjust based on your design */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button:hover {
+  background-color: #357ae8;
 }
 .container9 {
   position: absolute;
@@ -116,21 +136,28 @@
   height: min-content;
 }
 .imgGoogle {
-  width: min-content;
-  height: min-content;
-  align-self: flex-start;
-}
-.sVG {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ /* background: url('${svgDataUri}') no-repeat center center;  Replace with the path to the Google icon */
+  background-size: contain;
   width: 18px;
   height: 18px;
-  overflow: visible;
+  margin-right: 10px;
+
+}
+.sVG {
+ 
+  display: inline-block;
+  vertical-align: middle;
 }
 .icon {
   width: 100%;
   height: 100%;
 }
 .signInWithGoogle {
-  color: #dbdee1;
+  /* color: #dbdee1;
   font-size: 18px;
   line-height: 26px;
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
@@ -144,7 +171,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
+  vertical-align: middle;
 }
 .textBlock {
   display: block;
